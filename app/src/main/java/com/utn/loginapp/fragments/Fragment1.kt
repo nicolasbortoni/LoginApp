@@ -1,5 +1,6 @@
 package com.utn.loginapp.fragments
 
+import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -52,14 +53,23 @@ class Fragment1 : Fragment() {
 
             var usrAux = usrList.find { it.name == usrPlainText.text.toString() }
 
-            if (usrAux == null) {Snackbar.make(v,"Nombre de usuario inválido",Snackbar.LENGTH_SHORT).show()}
+            if (usrAux == null) {
+                Snackbar.make(v,"Nombre de usuario inválido",Snackbar.LENGTH_SHORT).show()
+                usrPlainText.text = null
+                pswPlainText.text = null
+                usrPlainText.setHintTextColor(Color.parseColor("#ff0b16"))
+            }
             else{
                 if(usrAux.pass == pswPlainText.text.toString()){
+                    usrPlainText.text = null
+                    pswPlainText.text = null
                     val action = Fragment1Directions.actionFragment12ToFragment22()
                     v.findNavController().navigate(action)
                 }
                 else{
                     Snackbar.make(v,"Contraseña incorrecta",Snackbar.LENGTH_SHORT).show()
+                    pswPlainText.text = null
+                    pswPlainText.setHintTextColor(Color.parseColor("#ff0b16"))
                 }
             }
         }

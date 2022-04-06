@@ -39,6 +39,8 @@
         android:ems="10"
         android:hint="Pass"
         android:inputType="textPersonName"
+        android:password="true"
+        android:singleLine="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
