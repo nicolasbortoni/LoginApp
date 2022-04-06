@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.utn.loginapp.R
 import com.utn.loginapp.viewmode.Fragment1ViewModel
+import androidx.navigation.findNavController
 
 class Fragment1 : Fragment() {
 
