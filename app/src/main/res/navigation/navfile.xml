@@ -3,19 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navfile"
-    app:startDestination="@id/fragment1">
-
+    app:startDestination="@id/fragment12">
     <fragment
-        android:id="@+id/fragment1"
+        android:id="@+id/fragment12"
         android:name="com.utn.loginapp.fragments.Fragment1"
         android:label="fragment1_fragment"
         tools:layout="@layout/fragment1_fragment" >
         <action
-            android:id="@+id/action_fragment1_to_fragment2"
-            app:destination="@id/fragment2" />
+            android:id="@+id/action_fragment12_to_fragment22"
+            app:destination="@id/fragment22" />
     </fragment>
     <fragment
-        android:id="@+id/fragment2"
+        android:id="@+id/fragment22"
         android:name="com.utn.loginapp.fragments.Fragment2"
         android:label="fragment2_fragment"
         tools:layout="@layout/fragment2_fragment" />

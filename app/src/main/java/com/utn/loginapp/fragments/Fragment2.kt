@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.utn.loginapp.R
 import com.utn.loginapp.viewmode.Fragment2ViewModel
-import androidx.navigation.findNavController
 
 class Fragment2 : Fragment() {
 
@@ -26,6 +25,10 @@ class Fragment2 : Fragment() {
     ): View? {
         v = inflater.inflate(R.layout.fragment2_fragment, container, false)
         return v
+    }
+
+    override fun onStart() {
+        super.onStart()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
