@@ -17,5 +17,9 @@
         android:id="@+id/fragment22"
         android:name="com.utn.loginapp.fragments.Fragment2"
         android:label="fragment2_fragment"
-        tools:layout="@layout/fragment2_fragment" />
+        tools:layout="@layout/fragment2_fragment" >
+        <argument
+            android:name="usrLoged"
+            app:argType="com.utn.loginapp.entities.User" />
+    </fragment>
 </navigation>

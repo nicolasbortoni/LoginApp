@@ -43,6 +43,7 @@ class Fragment1 : Fragment() {
         usrList.add(User("ailuugolini","5678","ailin@gmail.com",24))
         usrList.add(User("chinosirito","9876","chino@gmail.com",25))
         usrList.add(User("alanmuska","5432","alan@gmail.com",28))
+        usrList.add(User("juanreiszer","0000","jfri@gmail.com",25))
 
         return v
     }
@@ -63,7 +64,7 @@ class Fragment1 : Fragment() {
                 if(usrAux.pass == pswPlainText.text.toString()){
                     usrPlainText.text = null
                     pswPlainText.text = null
-                    val action = Fragment1Directions.actionFragment12ToFragment22()
+                    val action = Fragment1Directions.actionFragment12ToFragment22(usrAux)
                     v.findNavController().navigate(action)
                 }
                 else{

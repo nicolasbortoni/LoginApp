@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import com.utn.loginapp.R
 import com.utn.loginapp.viewmode.Fragment2ViewModel
 import android.widget.TextView
+import com.utn.loginapp.entities.User
 
 class Fragment2 : Fragment() {
 
     lateinit var v : View
     lateinit var txtMessage : TextView
+    lateinit var usr : User
 
     companion object {
         fun newInstance() = Fragment2()
@@ -32,7 +34,8 @@ class Fragment2 : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        txtMessage.text = "Bienvenido!"
+        usr = Fragment2Args.fromBundle(requireArguments()).usrLoged
+        txtMessage.text = "Bienvenido " + usr.name + "!"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
