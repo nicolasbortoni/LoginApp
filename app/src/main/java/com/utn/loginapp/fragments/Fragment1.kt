@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.utn.loginapp.entities.User
 import com.google.android.material.snackbar.Snackbar
+import com.utn.loginapp.entities.UserResource
 
 class Fragment1 : Fragment() {
 
@@ -21,7 +22,7 @@ class Fragment1 : Fragment() {
     lateinit var btnLogin : Button
     lateinit var usrPlainText : EditText
     lateinit var pswPlainText : EditText
-    var usrList : MutableList<User> = mutableListOf()
+    var usrRes = UserResource()
 
     companion object {
         fun newInstance() = Fragment1()
@@ -39,11 +40,6 @@ class Fragment1 : Fragment() {
         usrPlainText = v.findViewById(R.id.usrPlainText)
         pswPlainText = v.findViewById(R.id.pswPlainText)
 
-        usrList.add(User("nicobortoni","1234","nicolas@gmail.com",25))
-        usrList.add(User("ailuugolini","5678","ailin@gmail.com",24))
-        usrList.add(User("chinosirito","9876","chino@gmail.com",25))
-        usrList.add(User("alanmuska","5432","alan@gmail.com",28))
-        usrList.add(User("juanreiszer","0000","jfri@gmail.com",25))
 
         return v
     }
@@ -52,7 +48,7 @@ class Fragment1 : Fragment() {
         super.onStart()
         btnLogin.setOnClickListener {
 
-            var usrAux = usrList.find { it.name == usrPlainText.text.toString() }
+            var usrAux = usrRes.usrList.find { it.name == usrPlainText.text.toString() }
 
             if (usrAux == null) {
                 Snackbar.make(v,"Nombre de usuario inválido",Snackbar.LENGTH_SHORT).show()
